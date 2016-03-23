@@ -1,4 +1,5 @@
 // 2016.3.23 ylxdzsw@gmail.com
+'use strict'
 
 const should = require("should")
 const nextDate = require("./nextDate.js")
