@@ -1,0 +1,12 @@
+{
+  "name": "nextdate",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "should": "^8.2.2"
+  }
+}
