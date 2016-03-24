@@ -6,7 +6,7 @@ const nextDate = require("./nextDate.js")
 
 describe("black-box", () => {
     it("should get the right answer for some trival cases", () => {
-        nextDate(3,24,2016).should.be.exactly("2016-3-25 Friday")
+        nextDate(3,24,2016).should.be.exactly("2016-3-25 Friday 农历丙申年 二月十七")
     })
 	it("should report error when inputs are not valid", () => {
         nextDate('q','a','q').should.startWith("Error")
@@ -73,6 +73,9 @@ describe("white-box", () => {
 
     })
     describe("format", () => {
+
+    })
+    describe("lunarize", () => {
 
     })
 })

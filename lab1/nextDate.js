@@ -1,14 +1,17 @@
 // 2016.3.23 ylxdzsw@gmail.com
 'use strict'
 
+const lunarize = require("./lunar.js")
+
 module.exports = (m, d, y) => {
     if(!checkType(m, d, y) || !checkRange(m, d, y)){
         return "Error: input should be a valid date between 1990.1.1 ~ 2100.12.31"
     }
 
-	const date = addOneDay(m, d, y)
+    const date    = addOneDay(m, d, y)
     const weekday = nextWeekDay(m, d, y)
-    return format(date, weekday)
+    const lunar   = lunarize(date)
+    return format(date, weekday, lunar)
 }
 
 const isLeapYear = (y) => !(y % 4 ? 1 : y % 100 ? 0 : y % 400)
@@ -51,8 +54,8 @@ const format = (date, weekday, lunar) => {
     const d = date[1]
     const y = date[2]
     const w = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][weekday]
-
-    return `${y}-${m}-${d} ${w}`
+    const l = lunar.length ? ` 农历${lunar}` : ''
+    return `${y}-${m}-${d} ${w}${l}`
 }
 
 // exports some tool functions for white-box test
@@ -66,3 +69,4 @@ module.exports.addOneMonth    = addOneMonth
 module.exports.addOneYear     = addOneYear
 module.exports.nextWeekDay    = nextWeekDay
 module.exports.format         = format
+module.exports.lunarize       = lunarize
