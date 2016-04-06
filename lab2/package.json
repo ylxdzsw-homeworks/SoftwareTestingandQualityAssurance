@@ -2,26 +2,14 @@
   "name": "fuck-commision",
   "version": "0.0.1",
   "scripts": {
-    "test": "istanbul cover node_modules/mocha/bin/_mocha",
-    "build": "webpack --config GUI/webpack.config.js --progress --colors"
+    "test": "istanbul cover node_modules/mocha/bin/_mocha"
   },
   "devDependencies": {
-    "babel-core": "^6.3.26",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "html-webpack-plugin": "^2.7.2",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
-    "should": "^8.2.2",
-    "transfer-webpack-plugin": "^0.1.4",
-    "webpack": "^1.12.9"
+    "should": "^8.2.2"
   },
   "dependencies": {
-    "cli-table": "^0.3.1",
-    "material-ui": "^0.15.0-alpha.2",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "react-tap-event-plugin": "^0.2.1"
+    "cli-table": "^0.3.1"
   }
 }

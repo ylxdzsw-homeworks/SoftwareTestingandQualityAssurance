@@ -21,9 +21,10 @@ const getYearLength = (y) => isLeapYear(y) ? 366 : 365
 const getMonthLength = (m, y) => [31, isLeapYear(y) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m-1]
 
 const checkType = (m, d, y) => {
-    const valid_y = typeof(y) == 'number'
-    const valid_m = typeof(m) == 'number'
-    const valid_d = typeof(d) == 'number'
+    const isInteger = (x) => x == Math.floor(x)
+    const valid_y = typeof(y) == 'number' && isInteger(y)
+    const valid_m = typeof(m) == 'number' && isInteger(m)
+    const valid_d = typeof(d) == 'number' && isInteger(d)
     return valid_d && valid_m && valid_y
 }
 
